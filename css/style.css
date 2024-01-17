@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: url("https://images.unsplash.com/photo-1606216688904-4ecf20a5cc91?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.container::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+@media screen and (max-width: 991px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+.main {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  max-height: 80%;
+  height: 80%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+header .logo {
+  width: 60px;
+  height: 60px;
+}
+
+header .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: #ddd;
+}
+.main-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.main-content h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.main-content h1 span {
+  color: #d4e719;
+}
+.main-content button {
+  background: transparent;
+  border: 1px solid #d4e719;
+  padding: 15px 40px;
+  border-radius: 5px;
+  color: #d4e719;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 80px;
+}
+.main-content button:hover {
+  background-color: #d4e719;
+  color: #000;
+  font-weight: bold;
+}
+
+.launch-time {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.launch-time div {
+  width: 80px;
+  height: 80px;
+  background-color: #333;
+  font-size: 32px;
+  line-height: 80px;
+  margin: 0 5px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.launch-time div::after {
+  position: absolute;
+  font-size: 18px;
+  margin-top: 100px;
+  color: #d4e719;
+}
+.launch-time div#days::after {
+  content: "Days";
+}
+.launch-time div#hours::after {
+  content: "Hours";
+}
+.launch-time div#minutes::after {
+  content: "Minutes";
+}
+.launch-time div#seconds::after {
+  content: "Seconds";
+}
+
+.rocket {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: 120px;
+  animation: rocket 4s linear infinite;
+}
+
+.rocket img {
+  width: 100%;
+}
+
+@keyframes rocket {
+  0% {
+    opacity: 1;
+    bottom: 0;
+  }
+  100% {
+    opacity: 0;
+    bottom: 100%;
+  }
+}
